@@ -11,18 +11,18 @@
 
 <body>
   <section>
-    <select>
+    <select id="currency" onchange="start()">
       <option>BYN</option>
       <option>USD</option>
       <option>EUR</option>
       <option>CNY</option>
       <option>RUB</option>
     </select>
-    <input type="number" placeholder="Введите число">
-    <label>USD</label>
-    <label>EUR</label>
-    <label>CNY</label>
-    <label>RUB</label>
+    <input id="number" type="number" placeholder="Введите число">
+    <label class="first-currency"></label>
+    <label class="second-currency"></label>
+    <label class="third-currency"></label>
+    <label class="fourth-currency"></label>
   </section>
   <script src="script.js"></script>
 </body>
