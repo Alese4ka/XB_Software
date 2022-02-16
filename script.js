@@ -17,10 +17,13 @@ function start(){
       value = (Math.random() * (max - min) + min).toFixed(2);
       sum = (numberOfCurrency*value).toFixed(2);
     }
+    //сгенерировать раз и навсегда, а не каждый раз
 
     switch(selectedCurrency) {
       case 'BYN':  
-      //если дата текущая  то 0.39 курс, выше нельзя
+      //если дата текущая  то 0.39 курс
+      // выше нельзя
+      //ниже то самая нижняя дата
         getRandom(0.39, 0.43)
         numberOfFirst.innerHTML = `${sum + " USD"}`; 
   
