@@ -11,6 +11,12 @@
 
 <body>
   <section>
+    <form>
+      <div>
+        <label for="date">Укажите дату:</label>
+        <input type="date" id="date" min="2022-02-02">
+      </div>
+    </form>
     <select id="currency" onchange="start()">
       <option>BYN</option>
       <option>USD</option>
@@ -18,7 +24,7 @@
       <option>CNY</option>
       <option>RUB</option>
     </select>
-    <input id="number" type="number" placeholder="Введите число">
+    <input id="number" type="number" placeholder="Введите число" min="0">
     <label class="first-currency"></label>
     <label class="second-currency"></label>
     <label class="third-currency"></label>
