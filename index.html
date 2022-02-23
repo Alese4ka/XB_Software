@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <title>JS</title>
+</head>
+
+<body>
+  <section class="wrapper">
+    <select id="currency" onchange="start()">
+      <option>BYN</option>
+      <option>USD</option>
+      <option>EUR</option>
+      <option>CNY</option>
+      <option>RUB</option>
+    </select>
+    <div class="field__currency">
+      <input id="number" value="" placeholder="Введите число" min="0" type="number">
+      <input id="text" value="" placeholder="Введите число" min="0" type="text">
+      <div class="arrow" onclick="start()">
+        <div></div>
+      </div>
+      <div class="field__currency_hide">
+        <label class="first-currency"></label>
+        <label class="second-currency"></label>
+        <label class="third-currency"></label>
+        <label class="fourth-currency"></label>
+      </div>
+    </div>
+    <input type="date" name="calendar" id="date" max="2022-02-16">
+  </section>
+  <script src="script.js"></script>
+</body>
+
+</html>

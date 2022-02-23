@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.wrapper {
+  max-width: 40rem;
+  font-family: "Roboto", sans-serif;
+  padding: 10rem 0;
+  margin: 0 auto;
+}
+#currency {
+  border: 0.05rem solid black;
+}
+.field__currency {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#number,
+#text {
+  width: 12.5rem;
+  height: 9.25rem;
+  font-size: 1rem;
+  border: 0.05rem solid black;
+  margin: 1rem 0;
+  padding-left: 1rem;
+}
+.field__currency_hide {
+  margin-left: 2rem;
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+}
+#date {
+  border: 0.05rem solid black;
+}
+.first-currency,
+.second-currency,
+.third-currency,
+.fourth-currency {
+  border: 0.05rem solid black;
+  margin-bottom: 1rem;
+  padding: 0.25rem;
+  width: 20rem;
+  height: 1rem;
+}
+.arrow {
+  cursor: pointer;
+  position: relative;
+  width: 5rem;
+  height: 3.125rem;
+  margin: 1.25rem 0 1.25rem 2.5rem;
+  cursor: pointer;
+}
+.arrow div {
+  position: relative;
+  top: 1.25rem;
+  width: 4.375rem;
+  height: 0.4375rem;
+  background-color: #337ab7;
+  left: 0;
+  display: block;
+}
+.arrow div::after {
+  content: "";
+  position: absolute;
+  width: 1.875rem;
+  height: 0.4375rem;
+  top: -0.5625rem;
+  right: -0.25rem;
+  background-color: #337ab7;
+  transform: rotate(45deg);
+}
+.arrow div::before {
+  content: "";
+  position: absolute;
+  width: 1.875rem;
+  height: 0.4375rem;
+  top: 0.5625rem;
+  right: -0.25rem;
+  background-color: #337ab7;
+  box-shadow: 0 0.1875rem 0.3125rem rgba(0, 0, 0, 0.2);
+  transform: rotate(-45deg);
+}
+.arrow div:hover,
+.arrow div:hover::after,
+.arrow div:hover::before {
+  background-color: #656565;
+  box-shadow: 0 0.1875rem 0.3125rem rgba(0, 0, 0, 0.2);
+  transition: 1s;
+}
+#text {
+  display: none;
+}
