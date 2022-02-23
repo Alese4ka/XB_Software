@@ -1,8 +1,11 @@
 let calendar = document.querySelector('input[type="date"]');
-calendar.value = "2022-02-23";
+calendar.value = "2022-02-16";
 
 function start(){
   let numberOfCurrency = document.getElementById("number").value;
+  document.getElementById("text").value = new Intl.NumberFormat('ru-RU').format(numberOfCurrency);
+  document.getElementById("text").style.display = "block";
+  document.getElementById("number").style.display = "none";
   let selectedCurrency = document.getElementById("currency").value;
   let numberOfFirst = document.querySelector(".first-currency");
   let numberOfSecond = document.querySelector(".second-currency");
@@ -18,12 +21,15 @@ function start(){
   }
   else {
     function getRandom(min, max) {
-      if(calendar.value > '2022-02-23'){
+      if(calendar.value > '2022-02-16'){
         alert("Нельзя выбрать дату, следующую за 23.02.2022");
         e.preventDefault
       }
-      else if(calendar.value === '2022-02-23'){
+      else if(calendar.value === '2022-02-16'){
         sum = (numberOfCurrency*min).toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+      }
+      else if(calendar.value < '2022-02-02'){
+        sum = (numberOfCurrency*max).toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
       }
       else{
         value = (Math.random() * (max - min) + min).toFixed(2);
@@ -111,7 +117,3 @@ window.onkeyup = function (event) {
 }
 
 
-// 5 555 555
-//numberOfCurrency = document.getElementById("number").value;
-//document.getElementById('number').value = numberOfCurrency.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); 
-//console.log(numberOfCurrency)
