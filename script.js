@@ -18,9 +18,12 @@ function start(){
   }
   else {
     function getRandom(min, max) {
-      if(calendar.value === '2022-02-23'){
+      if(calendar.value > '2022-02-23'){
+        alert("Нельзя выбрать дату, следующую за 23.02.2022");
+        e.preventDefault
+      }
+      else if(calendar.value === '2022-02-23'){
         sum = (numberOfCurrency*min).toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-        console.log(sum)
       }
       else{
         value = (Math.random() * (max - min) + min).toFixed(2);
