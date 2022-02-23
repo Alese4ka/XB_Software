@@ -5,18 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" src="style.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
   <title>JS</title>
 </head>
 
 <body>
-  <section>
-    <form>
-      <div>
-        <label for="date">Укажите дату:</label>
-        <input type="date" id="date">
-      </div>
-    </form>
+  <section class="wrapper">
     <select id="currency" onchange="start()">
       <option>BYN</option>
       <option>USD</option>
@@ -24,11 +19,19 @@
       <option>CNY</option>
       <option>RUB</option>
     </select>
-    <input id="number" type="number" placeholder="Введите число" min="0">
-    <label class="first-currency"></label>
-    <label class="second-currency"></label>
-    <label class="third-currency"></label>
-    <label class="fourth-currency"></label>
+    <div class="field__currency">
+      <input id="number" value="" placeholder="Введите число" min="0" type="number">
+      <div class="arrow" onclick="start()">
+        <div></div>
+      </div>
+      <div class="field__currency_hide">
+        <label class="first-currency"></label>
+        <label class="second-currency"></label>
+        <label class="third-currency"></label>
+        <label class="fourth-currency"></label>
+      </div>
+    </div>
+    <input type="date" name="calendar" id="date" max="2022-02-23">
   </section>
   <script src="script.js"></script>
 </body>

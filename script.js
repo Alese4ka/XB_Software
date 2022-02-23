@@ -1,3 +1,6 @@
+let calendar = document.querySelector('input[type="date"]');
+calendar.value = "2022-02-23";
+
 function start(){
   let numberOfCurrency = document.getElementById("number").value;
   let selectedCurrency = document.getElementById("currency").value;
@@ -6,86 +9,90 @@ function start(){
   let numberOfThird = document.querySelector(".third-currency");
   let numberOfFourth = document.querySelector(".fourth-currency");
   let sum;
-
-  //при клике на date вызываем эту функцию и передаем ее значение в start
   
-  if(numberOfCurrency < 0) {
-    numberOfFirst.innerHTML = `${"Введите положительное число"}`; 
+  if(numberOfCurrency  == ""){
+    e.preventDefault
+  }
+  else if(numberOfCurrency < 0) {
+    alert("Введите положительное число"); 
   }
   else {
     function getRandom(min, max) {
-      value = (Math.random() * (max - min) + min).toFixed(2);
-      sum = (numberOfCurrency*value).toFixed(2);
+      if(calendar.value === '2022-02-23'){
+        sum = (numberOfCurrency*min).toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+        console.log(sum)
+      }
+      else{
+        value = (Math.random() * (max - min) + min).toFixed(2);
+        sum = (numberOfCurrency*value).toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+      }
     }
-    //сгенерировать раз и навсегда, а не каждый раз
 
     switch(selectedCurrency) {
       case 'BYN':  
-      //если дата текущая  то 0.39 курс
-      // выше нельзя
-      //ниже то самая нижняя дата
         getRandom(0.39, 0.43)
         numberOfFirst.innerHTML = `${sum + " USD"}`; 
-  
-        getSumOfCurrency(0.34);
+        
+        getRandom(0.34, 0.37);
         numberOfSecond.innerHTML = `${sum + " EUR"}`; 
         
-        getSumOfCurrency(2.46);
+        getRandom(2.46, 2.71);
         numberOfThird.innerHTML = `${sum + " CNY"}`; 
         
-        getSumOfCurrency(29.30);
+        getRandom(29.30, 32.23);
         numberOfFourth.innerHTML = `${sum + " RUB"}`; 
+        
         break;
       case 'USD':   
-        getSumOfCurrency(2.5846);
+        getRandom(2.5846, 2.84);
         numberOfFirst.innerHTML = `${sum + " BYN"}`; 
         
-        getSumOfCurrency(0.88);
+        getRandom(0.88, 0.97);
         numberOfSecond.innerHTML = `${sum + " EUR"}`; 
         
-        getSumOfCurrency(6.31);
+        getRandom(6.31, 6.94);
         numberOfThird.innerHTML = `${sum + " CNY"}`; 
   
-        getSumOfCurrency(75.10);
+        getRandom(75.10, 82.61);
         numberOfFourth.innerHTML = `${sum + " RUB"}`; 
         break;
       case 'EUR':    
-        getSumOfCurrency(2.92);
+        getRandom(2.92, 3.21);
         numberOfFirst.innerHTML = `${sum + " BYN"}`; 
         
-        getSumOfCurrency(1.14);
+        getRandom(1.14, 1.25);
         numberOfSecond.innerHTML = `${sum + " USD"}`; 
         
-        getSumOfCurrency(7.18);
+        getRandom(7.18, 7.9);
         numberOfThird.innerHTML = `${sum + " CNY"}`; 
         
-        getSumOfCurrency(85.47);
+        getRandom(85.47, 94.02);
         numberOfFourth.innerHTML = `${sum + " RUB"}`; 
         break;
       case 'CNY':  
-        getSumOfCurrency(0.41);
+        getRandom(0.41, 0.45);
         numberOfFirst.innerHTML = `${sum + " BYN"}`; 
         
-        getSumOfCurrency(1.16);
+        getRandom(1.16, 1.28);
         numberOfSecond.innerHTML = `${sum + " USD"}`; 
         
-        getSumOfCurrency(0.14);
+        getRandom(0.14, 0.15);
         numberOfThird.innerHTML = `${sum + " EUR"}`; 
         
-        getSumOfCurrency(11.90);
+        getRandom(11.90, 13.09);
         numberOfFourth.innerHTML = `${sum + " RUB"}`; 
         break;
       case 'RUB':  
-        getSumOfCurrency(0.0341);
+        getRandom(0.0341, 0.0375);
         numberOfFirst.innerHTML = `${sum + " BYN"}`; 
         
-        getSumOfCurrency(0.0133);
+        getRandom(0.0133, 0.0146);
         numberOfSecond.innerHTML = `${sum + " USD"}`;
   
-        getSumOfCurrency(0.0117);
+        getRandom(0.0117, 0.01287);
         numberOfThird.innerHTML = `${sum + " EUR"}`; 
   
-        getSumOfCurrency(0.0841);
+        getRandom(0.0841, 0.0925);
         numberOfFourth.innerHTML = `${sum + " CNY"}`; 
         break;
       default:
@@ -99,3 +106,9 @@ window.onkeyup = function (event) {
     start();
   }
 }
+
+
+// 5 555 555
+//numberOfCurrency = document.getElementById("number").value;
+//document.getElementById('number').value = numberOfCurrency.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); 
+//console.log(numberOfCurrency)
